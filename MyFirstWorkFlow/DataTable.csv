@@ -1,0 +1,12 @@
+﻿Id,Name,CurrencyCode,Rate,DisplayLocale,CustomFormatting,LimitedToStores,Published,DisplayOrder,CreatedOnUtc,UpdatedOnUtc
+1,US Dollar,USD,1.0000,en-US,,False,True,1,02/21/2017 09:09:57,02/21/2017 09:09:57
+2,Australian Dollar,AUD,1.1400,en-AU,,False,False,2,02/21/2017 09:09:57,02/21/2017 09:09:57
+3,British Pound,GBP,0.6200,en-GB,,False,False,3,02/21/2017 09:09:57,02/21/2017 09:09:57
+4,Canadian Dollar,CAD,1.1200,en-CA,,False,False,4,02/21/2017 09:09:57,02/21/2017 09:09:57
+5,Chinese Yuan Renminbi,CNY,6.1100,zh-CN,,False,False,5,02/21/2017 09:09:57,02/21/2017 09:09:57
+6,Euro,EUR,0.7900,,€0.00,False,True,6,02/21/2017 09:09:57,02/21/2017 09:09:57
+7,Hong Kong Dollar,HKD,7.7500,zh-HK,,False,False,7,02/21/2017 09:09:57,02/21/2017 09:09:57
+8,Japanese Yen,JPY,109.2700,ja-JP,,False,False,8,02/21/2017 09:09:57,02/21/2017 09:09:57
+9,Russian Rouble,RUB,43.5100,ru-RU,,False,False,9,02/21/2017 09:09:57,02/21/2017 09:09:57
+10,Swedish Krona,SEK,7.3900,sv-SE,,False,False,10,02/21/2017 09:09:57,02/21/2017 09:09:57
+11,Romanian Leu,RON,3.5200,ro-RO,,False,False,11,02/21/2017 09:09:57,02/21/2017 09:09:57
