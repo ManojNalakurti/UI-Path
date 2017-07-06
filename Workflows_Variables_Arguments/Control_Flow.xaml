@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Dictionary" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Dictionary_1"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Control_Flow" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Control_Flow_1"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -51,45 +51,43 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Dictionary" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Control_Flow" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(of string,string) FROM {{&quot;FirstName&quot;,&quot;Siva&quot;},{&quot;LastName&quot;,&quot;T&quot;},{&quot;MiddleName&quot;,&quot;R&quot;}}]" Name="info" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="Name" />
+      <Variable x:TypeArguments="x:Int32" Name="x" />
     </Sequence.Variables>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input dialog" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter your first Name" Title="Name">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input dialog" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter an integer value" Title="Value">
       <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="ui:GenericValue">[Name]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32">[x]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[info("FirstName")]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Name]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <WriteLine DisplayName="Write line" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[info(&quot;FirstName&quot;)]" />
-    <sads:DebugSymbol.Symbol>d0tDOlxVc2Vyc1xERUxMXERlc2t0b3BcVUktUGF0aFxXb3JrZmxvd3NfVmFyaWFibGVzX0FyZ3VtZW50c1xEaWN0aW9uYXJ5LnhhbWwLOwNPDgIBAT1OPe4BAgECQAVEFgIBCkUFTA4CAQZNBU1+AgEDQIwBQKoBAgEOQjhCPgIBDECxAUC3AQIBC0owSjYCAQlHMUdEAgEHTVxNewIBBA==</sads:DebugSymbol.Symbol>
+    <If Condition="[(x mod 2) = 0]" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="Even Number" TopMost="True" />
+      </If.Then>
+      <If.Else>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="Odd number" TopMost="True" />
+      </If.Else>
+    </If>
+    <sads:DebugSymbol.Symbol>d01DOlxVc2Vyc1xERUxMXERlc2t0b3BcVUktUGF0aFxXb3JrZmxvd3NfVmFyaWFibGVzX0FyZ3VtZW50c1xDb250cm9sX0Zsb3cueGFtbAs6A0wOAgEBPgVCFgIBCUMFSgoCAQI+jAE+pAECAQ1AMEAzAgELPqsBPrIBAgEKQxNDJAIBA0UJRb0BAgEHSAlIvAECAQVFngFFqwECAQhIngFIqgECAQY=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InputDialog_1" sap:VirtualizedContainerService.HintSize="314,92" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="314,61" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,417">
+      <sap2010:ViewStateData Id="InputDialog_1" sap:VirtualizedContainerService.HintSize="653,92" />
+      <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="MessageBox_3" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="653,208" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="675,464">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Dictionary_1" sap:VirtualizedContainerService.HintSize="376,497" />
+      <sap2010:ViewStateData Id="Control_Flow_1" sap:VirtualizedContainerService.HintSize="376,336" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
