@@ -1,0 +1,118 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Pick_Branch" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Pick_Branch_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Pick sap2010:WorkflowViewState.IdRef="Pick_1">
+      <PickBranch sap2010:WorkflowViewState.IdRef="PickBranch_1">
+        <PickBranch.Trigger>
+          <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" Private="False" Url="www.amazon.in">
+            <ui:OpenBrowser.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <ui:OnImageAppear Body="{x:Null}" ContinueOnError="{x:Null}" FoundElement="{x:Null}" DisplayName="On image appear 'chrome.exe Online'" sap2010:WorkflowViewState.IdRef="OnImageAppear_2" RepeatForever="False">
+                    <ui:OnImageAppear.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+                    </ui:OnImageAppear.Image>
+                    <ui:OnImageAppear.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                    </ui:OnImageAppear.Target>
+                  </ui:OnImageAppear>
+                </Sequence>
+              </ActivityAction>
+            </ui:OpenBrowser.Body>
+          </ui:OpenBrowser>
+        </PickBranch.Trigger>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Network Won" TopMost="True" />
+      </PickBranch>
+      <PickBranch sap2010:WorkflowViewState.IdRef="PickBranch_2">
+        <PickBranch.Trigger>
+          <Delay Duration="00:00:30" sap2010:WorkflowViewState.IdRef="Delay_2" />
+        </PickBranch.Trigger>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="Branch 2 executed" TopMost="True" />
+      </PickBranch>
+    </Pick>
+    <sads:DebugSymbol.Symbol>d0xDOlxVc2Vyc1xERUxMXERlc2t0b3BcVUktUGF0aFxXb3JrZmxvd3NfVmFyaWFibGVzX0FyZ3VtZW50c1xQaWNrX0JyYW5jaC54YW1sEDgDWg4CAQE5BVgMAgECOgdRFAIBCFIHVxQCAQM8C04cAgELUAlQvQECAQlUC1RSAgEGVglWwwECAQQ8xQE81AECARBCEUscAgEMUJ4BUKsBAgEKVBtUJQIBB1aeAVaxAQIBBUMTSiYCAQ1D2gFD4QECAQ5FQUVGAgEP</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="OnImageAppear_2" sap:VirtualizedContainerService.HintSize="414,162" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="436,286">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_2" sap:VirtualizedContainerService.HintSize="450,385" />
+      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="PickBranch_1" sap:VirtualizedContainerService.HintSize="480,645" />
+      <sap2010:ViewStateData Id="Delay_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="PickBranch_2" sap:VirtualizedContainerService.HintSize="344,645" />
+      <sap2010:ViewStateData Id="Pick_1" sap:VirtualizedContainerService.HintSize="978,691" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="1000,815">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Pick_Branch_1" sap:VirtualizedContainerService.HintSize="1040,895" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
